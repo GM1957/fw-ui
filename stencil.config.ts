@@ -15,7 +15,9 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: 'assets' }
+        { src: 'assets' },
+        { src: '../node_modules/datatables.net-dt/css/jquery.dataTables.css',dest: 'assets/css/dataTables.css' },
+        { src: '../node_modules/daterangepicker/daterangepicker.css',dest: 'assets/css/daterangepicker.css' },
       ]
     }
   ],

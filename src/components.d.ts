@@ -25,6 +25,7 @@ export namespace Components {
     'stateText': string;
     'value': string;
   }
+  interface FwTable {}
 }
 
 declare global {
@@ -41,9 +42,16 @@ declare global {
     prototype: HTMLFwInputElement;
     new (): HTMLFwInputElement;
   };
+
+  interface HTMLFwTableElement extends Components.FwTable, HTMLStencilElement {}
+  var HTMLFwTableElement: {
+    prototype: HTMLFwTableElement;
+    new (): HTMLFwTableElement;
+  };
   interface HTMLElementTagNameMap {
     'fw-datepicker': HTMLFwDatepickerElement;
     'fw-input': HTMLFwInputElement;
+    'fw-table': HTMLFwTableElement;
   }
 }
 
@@ -64,10 +72,12 @@ declare namespace LocalJSX {
     'stateText'?: string;
     'value'?: string;
   }
+  interface FwTable {}
 
   interface IntrinsicElements {
     'fw-datepicker': FwDatepicker;
     'fw-input': FwInput;
+    'fw-table': FwTable;
   }
 }
 
@@ -79,6 +89,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'fw-datepicker': LocalJSX.FwDatepicker & JSXBase.HTMLAttributes<HTMLFwDatepickerElement>;
       'fw-input': LocalJSX.FwInput & JSXBase.HTMLAttributes<HTMLFwInputElement>;
+      'fw-table': LocalJSX.FwTable & JSXBase.HTMLAttributes<HTMLFwTableElement>;
     }
   }
 }
